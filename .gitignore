@@ -1,0 +1,6 @@
+IP2LOCATION-LITE-DB*.CSV
+ipdata.db
+local_data/
+static/data/US.json
+__pycache__/
+*.pyc
