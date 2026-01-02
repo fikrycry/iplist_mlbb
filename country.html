@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Country IP Ranges</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(13,110,253,0.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(32,201,151,0.18), transparent 55%),
+        #0b1020;
+      color: #e9eefc;
+    }
+    .page-wrap { padding-top: 2.25rem; padding-bottom: 3rem; }
+    .panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+    .muted { color: rgba(233,238,252,0.72); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: #e9eefc;
+      text-decoration: none;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.22);
+      color: #ffffff;
+    }
+    .flag {
+      width: 44px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.92);
+      padding: 2px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      flex: 0 0 auto;
+    }
+    .table-wrap {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .table {
+      --bs-table-bg: rgba(255,255,255,0.04);
+      --bs-table-color: #e9eefc;
+      --bs-table-striped-bg: rgba(255,255,255,0.06);
+      --bs-table-border-color: rgba(255,255,255,0.12);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container page-wrap">
+  <div class="panel p-4 p-md-5 mb-4">
+    <div class="d-flex align-items-center justify-content-between gap-3">
+      <a href="./index.html" class="btn btn-ghost">← Kembali</a>
+      <div class="muted small">Data dari file statis</div>
+    </div>
+    <div class="mt-4 d-flex align-items-center gap-3">
+      <img id="flag" class="flag" src="" alt="">
+      <div class="flex-grow-1">
+        <h1 class="mb-0"><span id="title">Country</span></h1>
+        <div id="subtitle" class="muted"></div>
+      </div>
+    </div>
+    <div id="meta" class="muted mt-3"></div>
+    <div class="mt-4">
+      <div class="input-group">
+        <span class="input-group-text btn-ghost">Cari</span>
+        <input id="searchInput" type="search" class="form-control" placeholder="Filter region atau city" autocomplete="off">
+        <button id="clearSearch" class="btn btn-ghost" type="button">Reset</button>
+      </div>
+      <div id="searchHint" class="muted small mt-2"></div>
+    </div>
+  </div>
+
+  <div id="list"></div>
+  <button id="loadMore" class="btn btn-ghost d-none mt-3">Muat lebih</button>
+</div>
+<script src="country.js?v=4"></script>
+</body>
+</html>
